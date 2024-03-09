@@ -11,45 +11,47 @@ class SuccesfullScreen extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.only(left: 15,right: 15),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.check_circle,
-                  size: 80,
-                  color: Colors.green,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Successful!',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  'You have successfully registered in \n our app and start working in it.',
-                  style: TextStyle(fontSize: 17, fontStyle: FontStyle.italic),
-                ),
-                SizedBox(
-                  height: 200,
-                ),
-                Container(
-                  height: 50,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
-                      child: Text(
-                        'Start Shopping',
-                        style: TextStyle(color: Colors.white),
-                      )),
-                ),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.check_circle,
+                    size: 80,
+                    color: Colors.green,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Successful!',
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    'You have successfully registered in \n our app and start working in it.',
+                    style: TextStyle(fontSize: 17, fontStyle: FontStyle.italic),
+                  ),
+                  SizedBox(
+                    height: 200,
+                  ),
+                  Container(
+                    height: 50,
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomeScreen()),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                        child: Text(
+                          'Start Shopping',
+                          style: TextStyle(color: Colors.white),
+                        )),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
