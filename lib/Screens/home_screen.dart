@@ -1,4 +1,6 @@
+import 'package:ecommerce_app/Screens/header.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(left: 15, top: 15, right: 15),
-          child: SingleChildScrollView(
+          child: const SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -26,43 +28,13 @@ class HomeScreen extends StatelessWidget {
                     Icon(Icons.search),
                   ],
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 20),
-                  padding: EdgeInsets.only(left: 15, top: 10, bottom: 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.grey),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '50% Off',
-                            style: TextStyle(
-                                fontSize: 35, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'On everything today',
-                            style: TextStyle(
-                                fontSize: 25, fontStyle: FontStyle.italic),
-                          ),
-                          Text(
-                            'With Code: HSCREATIONS',
-                            style: TextStyle(
-                                fontSize: 15, fontStyle: FontStyle.italic),
-                          ),
-                          ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.black),
-                              child: Text(
-                                'Get Now',
-                                style: TextStyle(color: Colors.white),
-                              )),
-                        ],
-                      ),
-                      Image.asset('assets/images/sneaker_image1-removebg-preview.png',height: 170,width: 140,)
+                      const
+                      HeaderWidget(text: '50%',images: 'assets/images/sneaker_image1-removebg-preview.png',),
+                      HeaderWidget(text: '70%',images: 'assets/images/sneaker_image2-removebg-preview.png',),
                     ],
                   ),
                 ),
